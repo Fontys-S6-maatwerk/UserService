@@ -20,7 +20,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - NODE_ENV=production
+      - ASPNETCORE_ENVIRONMENT=Development
       - DB_HOST=db
       - DB_USERNAME=root
       - DB_PASSWORD=root

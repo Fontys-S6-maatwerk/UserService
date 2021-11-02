@@ -30,18 +30,18 @@ namespace User_Service.Web.Controllers
             return StatusCode(200, _context.User);
         }
 
-        // GET api/<UserController>/5
+        // GET api/<UserController>/2ef23f2f-23fr2fe2-4cf2f2f
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<User> Get(Guid id)
         {
-            return "value";
+            return StatusCode(200, _context.User.Find(id));
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public ActionResult<User> Post([FromBody] User value)
+        public ActionResult<User> Post([FromBody] UserDto userdto)
         {
-            _context.User.Add(value);
+            _context.User.Add(userdto.ToEntity());
             try
             {
                 _context.SaveChanges();
@@ -50,21 +50,23 @@ namespace User_Service.Web.Controllers
             {
                 throw;
                 //return StatusCode(500);
-               
+
             }
             return StatusCode(201, User);
         }
 
+        // TODO: implement patch service
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(Guid id, [FromBody] UserDto value)
         {
         }
-
+        // TODO: implement delete sequence using rabitmq.
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
         }
+        
     }
 }

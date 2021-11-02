@@ -19,9 +19,9 @@ namespace User_Service.Data.Migrations
 
             modelBuilder.Entity("User_Service.Data.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -44,9 +44,9 @@ namespace User_Service.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreatedAt = new DateTime(2021, 10, 12, 12, 19, 18, 566, DateTimeKind.Utc).AddTicks(2174),
-                            LastUpdatedAt = new DateTime(2021, 10, 12, 12, 19, 18, 566, DateTimeKind.Utc).AddTicks(2174),
+                            Id = new Guid("9c3b5697-e4ba-4c4a-b4c9-0dacd3b634e2"),
+                            CreatedAt = new DateTime(2021, 11, 2, 9, 1, 11, 392, DateTimeKind.Utc).AddTicks(4528),
+                            LastUpdatedAt = new DateTime(2021, 11, 2, 9, 1, 11, 392, DateTimeKind.Utc).AddTicks(4528),
                             Name = "harry",
                             Surname = "janssen"
                         });

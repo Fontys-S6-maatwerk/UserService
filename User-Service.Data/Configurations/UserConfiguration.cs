@@ -21,7 +21,7 @@ namespace User_Service.Data.Configurations
 
             builder.HasData(new User
             {
-                Id = 1,
+                Id = Guid.Parse("9c3b5697-e4ba-4c4a-b4c9-0dacd3b634e2"),
                 LastUpdatedAt = time,
                 Name = "harry",
                 Surname = "janssen",
