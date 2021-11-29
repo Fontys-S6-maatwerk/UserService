@@ -27,6 +27,20 @@
       "dotnetRunMessages": "true",
       "applicationUrl": "http://localhost:5000"
     },
+    "User_Service.Web localhost": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_HOST":"localhost",
+        "DB_USERNAME":"root",
+        "DB_PASSWORD":"root",
+        "DB_NAME":"ggc-user-db"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "http://localhost:5000"
+    },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,

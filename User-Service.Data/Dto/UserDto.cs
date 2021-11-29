@@ -19,8 +19,8 @@ namespace User_Service.Data.Entities
             return new User
             {
                 Id = Id,
-                Name = Name,
-                Surname = Surname,
+                FirstName = Name,
+                LastName = Surname,
             };
         }
 
