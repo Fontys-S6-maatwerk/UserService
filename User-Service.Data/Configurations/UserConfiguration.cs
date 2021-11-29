@@ -16,19 +16,19 @@ namespace User_Service.Data.Configurations
             // base values
             var time = DateTime.UtcNow;
 
-            builder.Property(s => s.Name).IsRequired();
-            builder.Property(s => s.Surname).IsRequired();
+            builder.Property(s => s.FirstName).IsRequired();
+            builder.Property(s => s.LastName).IsRequired();
 
-            builder.HasData(new User
-            {
-                Id = Guid.Parse("9c3b5697-e4ba-4c4a-b4c9-0dacd3b634e2"),
-                LastUpdatedAt = time,
-                Name = "harry",
-                Surname = "janssen",
-                CreatedAt = time,
+            //builder.HasData(new User
+            //{
+            //    Id = Guid.Parse("9c3b5697-e4ba-4c4a-b4c9-0dacd3b634e2"),
+            //    LastUpdatedAt = time,
+            //    Name = "harry",
+            //    Surname = "janssen",
+            //    CreatedAt = time,
 
 
-            });
+            //});
 
 
 

@@ -36,10 +36,15 @@ namespace User_Service.Web
 
             // database
             ServiceMapper.ConfigureServices(services, Configuration);
+            
+            //var receive = new EventBusReceive();
+            //receive.ReceiveUser();
+            services.AddSingleton<EventBusReceive>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext dataContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext dataContext, EventBusReceive cake)
         {
             foreach (var migration in dataContext.Database.GetPendingMigrations())
             {

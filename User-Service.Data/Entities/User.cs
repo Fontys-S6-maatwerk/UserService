@@ -11,9 +11,9 @@ namespace User_Service.Data.Entities
 
         //public Guid KeycloakGUID { get; set; }
 
-        public string Name { get; set; }
-
-        public string Surname { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
 
 
     }

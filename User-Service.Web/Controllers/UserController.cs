@@ -16,7 +16,7 @@ namespace User_Service.Web.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context, EventBusReceive cake)
         {
             _context = context;
         }
