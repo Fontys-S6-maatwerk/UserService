@@ -14,6 +14,8 @@ namespace User_Service.Data.Entities
 
         public string Surname { get; set; }
 
+        public string Email { get; set; }
+
         public User ToEntity()
         {
             return new User
@@ -21,6 +23,7 @@ namespace User_Service.Data.Entities
                 Id = Id,
                 FirstName = Name,
                 LastName = Surname,
+                Email = Email,
             };
         }
 
