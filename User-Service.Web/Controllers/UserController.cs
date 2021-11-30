@@ -63,25 +63,6 @@ namespace User_Service.Web.Controllers
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody] UserDto value)
         {
-            try
-            {
-                //TODO update user
-
-                
-                UserDto sendUser = new UserDto
-                {
-                    Name = value.Name,
-                    Surname = value.Surname,
-                    Email = value.Email
-                };
-
-                //Call eventbus
-                eventbusSend.SendUser(sendUser);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
         // TODO: implement delete sequence using rabitmq.
         // DELETE api/<UserController>/5
