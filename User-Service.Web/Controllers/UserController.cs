@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using User_Service.Data;
 using User_Service.Data.Entities;
-using User_Service.Web.Logic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,12 +15,10 @@ namespace User_Service.Web.Controllers
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EventBusSend eventbusSend;
 
         public UserController(ApplicationDbContext context, EventBusReceive cake)
         {
             _context = context;
-            eventbusSend = new EventBusSend();
         }
 
 
