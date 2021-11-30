@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using User_Service.Data;
 using User_Service.Data.Entities;
+using User_Service.Web.Logic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,10 +16,12 @@ namespace User_Service.Web.Controllers
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        public EventBusSend eventbusSend;
 
         public UserController(ApplicationDbContext context, EventBusReceive cake)
         {
             _context = context;
+            eventbusSend = new EventBusSend();
         }
 
 
@@ -60,6 +63,25 @@ namespace User_Service.Web.Controllers
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody] UserDto value)
         {
+            try
+            {
+                //TODO update user
+
+                
+                UserDto sendUser = new UserDto
+                {
+                    Name = value.Name,
+                    Surname = value.Surname,
+                    Email = value.Email
+                };
+
+                //Call eventbus
+                eventbusSend.SendUser(sendUser);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         // TODO: implement delete sequence using rabitmq.
         // DELETE api/<UserController>/5
