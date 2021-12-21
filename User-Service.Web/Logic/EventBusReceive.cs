@@ -26,7 +26,7 @@ public class EventBusReceive
 
     public void ReceiveUser()
     {
-        var factory = new ConnectionFactory() { HostName = "localhost" };
+        var factory = new ConnectionFactory() { HostName = "rabbitmq-1" };
         var connection = factory.CreateConnection();
         var channel = connection.CreateModel();
         channel.ExchangeDeclare(exchange: "auth_logs", type: ExchangeType.Fanout);
